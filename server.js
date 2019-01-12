@@ -5,40 +5,46 @@ const FileStore = require('session-file-store')(session);
 const body_parser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const axios = require('axios');
+const bcrypt = require('bcrypt-nodejs');
 
-// Configure mock users (no hashing etc. implemented)
-const users = [
-  {id: 'asdfg1', email: 'user@example.com', password: 'password'}
-];
-// Configure user lookup
+/*
+  Configurations
+ */
+// User lookup from mock db API
 passport.use(new LocalStrategy(
   {usernameField: 'email'},
   (username, password, done) => {
-    for (let user of users) {
-      if (username === user.email && password === user.password) {
-        console.log(`User ${user.email} logged in successfully`);
+    axios.get(`http://localhost:5050/users?email=${username}`)
+      .then((res) => {
+        const user = res.data[0];
+        if (!user) {
+          return done(null, false, {message: 'Wrong username (email) or password.\n'});
+        }
+        if (!bcrypt.compareSync(password, user.password)) {
+          return done(null, false, {message: 'Wrong username (email) or password.\n'});
+        }
         return done(null, user);
-      }
-    }
+      })
+      .catch((error) => done(error));
   }
 ));
-// Configure user persistence (using user.id as identifier, which is saved to session storage)
+// User persistence (using user.id as identifier, which is saved to session storage)
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
-// Reverse, from persistence
+// Reverse, get user data from persistence (by identifier)
 passport.deserializeUser((identifier, done) => {
-  let this_user = false;
-  for (let user of users) {
-    if (identifier === user.id) {
-      this_user = user;
-    }
-  }
-  done(null, this_user);
+  axios.get(`http://localhost:5050/users/${identifier}`)
+    .then((res) => done(null, res.data))
+    .catch((error) => done(error, false));
 });
 
 const app = express();
 
+/*
+  Middleware
+ */
 // Define content-type parser for both form-urlencoded and json
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
@@ -53,28 +59,33 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Specify routes
-app.get('/', (req, res) => {
-  console.log(`${req.sessionID} loaded homepage`);
-  res.send(`homepage\n`);
-});
-
+/*
+  Routes
+ */
 app.get('/auth', (req, res) => {
   if (req.isAuthenticated()) {
-    res.send(`Authenticated as ${req.user.id}`);
+    res.send(req.user.id);
   } else {
-    res.send('Use POST to log-in');
+    res.status(401).send('You must log-in first.');
   }
 });
-
 app.post('/auth', (req, res, next) => {
   // Execute user lookup (compared to req.body)
   passport.authenticate('local', (err, user, info) => {
-    // On successful login
+    if (info) {
+      return res.status(401).send(info.message);
+    }
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.status(401).send('Bad request.\n');
+    }
     req.login(user, (err) => {
-      console.log(`req.session.passport: ${JSON.stringify(req.session.passport)}`);
-      console.log(`req.user: ${JSON.stringify((req.user))}`);
-      res.send('Logged in\n');
+      if (err) {
+        return next(err);
+      }
+      return res.send(`Welcome ${user.id}`);
     });
   })(req, res, next);
 });
