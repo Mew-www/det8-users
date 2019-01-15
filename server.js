@@ -91,7 +91,7 @@ app.post('/auth', (req, res, next) => {
       if (err) {
         return next(err);
       }
-      return res.send(`Welcome ${user.id}`);
+      return res.send(user.id);
     });
   })(req, res, next);
 });
