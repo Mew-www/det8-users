@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const axios = require('axios');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors')
 
 /*
   Configurations
@@ -46,11 +47,7 @@ const app = express();
   Middleware
  */
 // Enable CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors());
 // Define content-type parser for both form-urlencoded and json
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
@@ -70,7 +67,7 @@ app.use(passport.session());
  */
 app.get('/auth', (req, res) => {
   if (req.isAuthenticated()) {
-    res.send(req.user.id);
+    res.send(JSON.stringify({name: req.user.id}));
   } else {
     res.status(401).send('You must log-in first.');
   }
@@ -91,7 +88,7 @@ app.post('/auth', (req, res, next) => {
       if (err) {
         return next(err);
       }
-      return res.send(user.id);
+      return res.send(JSON.stringify({name: user.id}));
     });
   })(req, res, next);
 });
