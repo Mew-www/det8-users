@@ -45,6 +45,12 @@ const app = express();
 /*
   Middleware
  */
+// Enable CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // Define content-type parser for both form-urlencoded and json
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
