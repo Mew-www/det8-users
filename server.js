@@ -47,7 +47,11 @@ const app = express();
   Middleware
  */
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+app.options('*', cors());
 // Define content-type parser for both form-urlencoded and json
 app.use(body_parser.urlencoded({extended: false}));
 app.use(body_parser.json());
