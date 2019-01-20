@@ -93,6 +93,35 @@ app.post('/auth', (req, res, next) => {
   })(req, res, next);
 });
 
+app.get('/history', (req, res) => {
+  if (req.isAuthenticated()) {
+    axios.get(`http://localhost:5050/histories/${req.user.id}`, {headers: {'Content-Type': 'application/json'}})
+      .then((response) => res.send(response.data.queries))
+      .catch((error) => res.send(error.response.data));
+  } else {
+    res.status(401).send('You must log-in first.');
+  }
+});
+
+app.post('/history', (req, res) => {
+  if (req.isAuthenticated()) {
+    axios.get(`http://localhost:5050/histories/${req.user.id}`)
+      .then((response1) => {
+        let existing_queries = response1.data.queries;
+        axios.put(
+          `http://localhost:5050/histories/${req.user.id}`,
+          {'queries': existing_queries.concat(req.body.queries).filter(query => query)},
+          {headers: {'Content-Type': 'application/json'}}
+        )
+          .then((response2) => res.send('OK'))
+          .catch((error) => res.send(error.response));
+      })
+      .catch((error) => res.send(error.response));
+  } else {
+    res.status(401).send('You must log-in first.');
+  }
+});
+
 app.listen(3030, () => {
   console.log('Running in port 3030');
 });

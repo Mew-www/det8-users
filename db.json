@@ -10,5 +10,15 @@
       "email": "user2@example.com",
       "password": "$2a$10$qe5jJlEytequi3dPRbMpb.yI8lSoC/eTsVQPeIe3pKBkXAsdY/0O2"
     }
+  ],
+  "histories": [
+    {
+      "queries": [],
+      "id": "Traveller 1"
+    },
+    {
+      "id": "Traveller 2",
+      "queries": []
+    }
   ]
 }
