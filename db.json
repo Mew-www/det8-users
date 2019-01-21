@@ -23,13 +23,15 @@
   ],
   "tickets": [
     {
-      "id": "Traveller 1",
       "1548079328": {
         "type": "HSL",
         "uid": "",
         "secret": "",
-        "zones": ["01"]
-      }
+        "zones": [
+          "01"
+        ]
+      },
+      "id": "Traveller 1"
     },
     {
       "id": "Traveller 2"

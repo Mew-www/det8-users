@@ -100,8 +100,23 @@ app.post('/auth', (req, res, next) => {
 app.get('/history', (req, res) => {
   if (req.isAuthenticated()) {
     axios.get(`http://localhost:5050/histories/${req.user.id}`, {headers: {'Content-Type': 'application/json'}})
-      .then((response) => res.send(response.data.queries))
-      .catch((error) => res.send(error.response.data));
+      .then((response) => {
+        let all_queries = response.data.queries;
+        let unique_queries = [];
+        for (let query of all_queries) {
+          let is_unique = true;
+          for (let known_query of unique_queries) {
+            if (JSON.stringify(query) === JSON.stringify(known_query)) {
+              is_unique = false;
+            }
+          }
+          if (is_unique) {
+            unique_queries.push(query);
+          }
+        }
+        res.send(unique_queries);
+      })
+      .catch((error) => res.send(error.response));
   } else {
     res.status(401).send('You must log-in first.');
   }
