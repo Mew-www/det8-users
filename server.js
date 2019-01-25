@@ -7,7 +7,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const axios = require('axios');
 const bcrypt = require('bcrypt-nodejs');
-const cors = require('cors')
+const cors = require('cors');
+
+const HSL_API_KEY = process.env.HSL_API_KEY;
 
 /*
   Configurations
@@ -141,6 +143,42 @@ app.post('/history', (req, res) => {
   }
 });
 
+app.get('/tickets', (req, res) => {
+  if (req.isAuthenticated()) {
+    axios.get(`http://localhost:5050/tickets/${req.user.id}`, {headers: {'Content-Type': 'application/json'}})
+      .then((response) => {
+        let valid_until_timestamps = Object.keys(response.data)
+          .filter(key => key !== "id")
+          .filter(timestamp => parseInt(timestamp) > (new Date()).getTime()/1000);
+        res.send(valid_until_timestamps.map(key => {return {...response.data[key], valid_until: key};}));
+      })
+      .catch((error) => res.send(error.response));
+  } else {
+    res.status(401).send('You must log-in first.');
+  }
+});
+
+app.post('/tickets', (req, res) => {
+  if (req.isAuthenticated()) {
+    axios.get(`http://localhost:5050/tickets/${req.user.id}`)
+      .then((response1) => {
+        let data = response.data;
+        data[req.body.valid_until] = req.body.ticketdata;
+        axios.put(
+          `http://localhost:5050/tickets/${req.user.id}`,
+          data,
+          {headers: {'Content-Type': 'application/json'}}
+        )
+          .then((response2) => res.send('OK'))
+          .catch((error) => res.send(error.response));
+      })
+      .catch((error) => res.send(error.response));
+  } else {
+    res.status(401).send('You must log-in first.');
+  }
+});
+
 app.listen(3030, () => {
   console.log('Running in port 3030');
+  console.log(HSL_API_KEY);
 });

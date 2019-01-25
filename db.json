@@ -13,7 +13,638 @@
   ],
   "histories": [
     {
-      "queries": [],
+      "queries": [
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kampin keskus",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Espoon keskus",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kauniainen",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kirkkonummi",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kirkkonummi",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Tuusula",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vantaa",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kerava",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Sipoo",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Sipoon keskus",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Siuntio",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": false
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kauniainen",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Tampere",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Rautatientori",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kauniainen",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-21-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kauniainen",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Sipoon keskus",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "18:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Kirkkonummi",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        },
+        {
+          "from_place": "Kamppi",
+          "to_place": "Hakaniemi",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-25-2019",
+          "time": "16:00",
+          "arrive_by": false,
+          "error": ""
+        }
+      ],
       "id": "Traveller 1"
     },
     {
@@ -23,13 +654,11 @@
   ],
   "tickets": [
     {
-      "1548079328": {
-        "type": "HSL",
+      "1548429648": {
+        "agency": "HSL",
+        "name": "Kertalippu Lähiseutu 1 (PKS)",
         "uid": "",
-        "secret": "",
-        "zones": [
-          "01"
-        ]
+        "secret": ""
       },
       "id": "Traveller 1"
     },
