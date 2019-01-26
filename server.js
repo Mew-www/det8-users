@@ -73,7 +73,7 @@ app.use(passport.session());
  */
 app.get('/auth', (req, res) => {
   if (req.isAuthenticated()) {
-    res.send(JSON.stringify({name: req.user.id}));
+    res.send(JSON.stringify({name: req.user.id, phone: req.user.phone}));
   } else {
     res.status(401).send('You must log-in first.');
   }
@@ -94,7 +94,7 @@ app.post('/auth', (req, res, next) => {
       if (err) {
         return next(err);
       }
-      return res.send(JSON.stringify({name: user.id}));
+      return res.send(JSON.stringify({name: user.id, phone: user.phone}));
     });
   })(req, res, next);
 });
@@ -118,7 +118,7 @@ app.get('/history', (req, res) => {
         }
         res.send(unique_queries);
       })
-      .catch((error) => res.send(error.response));
+      .catch((error) => res.send(error.response.data));
   } else {
     res.status(401).send('You must log-in first.');
   }
@@ -135,9 +135,9 @@ app.post('/history', (req, res) => {
           {headers: {'Content-Type': 'application/json'}}
         )
           .then((response2) => res.send('OK'))
-          .catch((error) => res.send(error.response));
+          .catch((error) => res.send(error.response.data));
       })
-      .catch((error) => res.send(error.response));
+      .catch((error) => res.send(error.response.data));
   } else {
     res.status(401).send('You must log-in first.');
   }
@@ -152,7 +152,7 @@ app.get('/tickets', (req, res) => {
           .filter(timestamp => parseInt(timestamp) > (new Date()).getTime()/1000);
         res.send(valid_until_timestamps.map(key => {return {...response.data[key], valid_until: key};}));
       })
-      .catch((error) => res.send(error.response));
+      .catch((error) => res.send(error.response.data));
   } else {
     res.status(401).send('You must log-in first.');
   }
@@ -163,18 +163,32 @@ app.post('/tickets', (req, res) => {
     axios.get(`http://localhost:5050/tickets/${req.user.id}`)
       .then((response1) => {
         let data = response.data;
-        data[req.body.valid_until] = req.body.ticketdata;
+        data[req.body.valid_until] = req.body;
         axios.put(
           `http://localhost:5050/tickets/${req.user.id}`,
           data,
           {headers: {'Content-Type': 'application/json'}}
         )
           .then((response2) => res.send('OK'))
-          .catch((error) => res.send(error.response));
+          .catch((error) => res.send(error.response.data));
       })
-      .catch((error) => res.send(error.response));
+      .catch((error) => res.send(error.response.data));
   } else {
     res.status(401).send('You must log-in first.');
+  }
+});
+
+app.post('/buyHSL', (req, res) => {
+  if (req.isAuthenticated()) {
+    axios.post('https://sales-api.hsl.fi/api/sandbox/ticket/v3/order', req.body, {headers: {"X-API-Key": HSL_API_KEY}})
+      .then(response => {
+        res.send(JSON.stringify((response.data)));
+      })
+      .catch(error => {
+        res.send(error.response.data);
+      })
+  } else {
+    res.status(401).send('You must log-in first');
   }
 });
 
