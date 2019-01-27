@@ -162,7 +162,7 @@ app.post('/tickets', (req, res) => {
   if (req.isAuthenticated()) {
     axios.get(`http://localhost:5050/tickets/${req.user.id}`)
       .then((response1) => {
-        let data = response.data;
+        let data = response1.data;
         data[req.body.valid_until] = req.body;
         axios.put(
           `http://localhost:5050/tickets/${req.user.id}`,
@@ -170,7 +170,7 @@ app.post('/tickets', (req, res) => {
           {headers: {'Content-Type': 'application/json'}}
         )
           .then((response2) => res.send('OK'))
-          .catch((error) => res.send(error.response.data));
+          .catch((error) => res.send(error.response1.data));
       })
       .catch((error) => res.send(error.response.data));
   } else {

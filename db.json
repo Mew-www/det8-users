@@ -15,7 +15,22 @@
   ],
   "histories": [
     {
-      "queries": [],
+      "queries": [
+        {
+          "from_place": "Kamppi",
+          "to_place": "Vanha Maantie 6",
+          "modes": {
+            "TRAM": true,
+            "BUS": true,
+            "SUBWAY": true,
+            "RAIL": true
+          },
+          "date": "01-27-2019",
+          "time": "20:00",
+          "arrive_by": false,
+          "error": ""
+        }
+      ],
       "id": "Traveller 1"
     },
     {
@@ -25,11 +40,12 @@
   ],
   "tickets": [
     {
-      "1548429648": {
+      "1548616851": {
+        "valid_until": 1548616851,
         "agency": "HSL",
         "name": "Kertalippu Lähiseutu 1 (PKS)",
-        "uid": "",
-        "secret": ""
+        "uid": "EKNfk6SMpIMn3NrUTwZ4GLkkd2ZJHcBXNdmUAlw333ktmFt61H2AGxAnJ8t2SoY4",
+        "secret": "+358000000"
       },
       "id": "Traveller 1"
     },
