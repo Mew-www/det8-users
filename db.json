@@ -2,51 +2,29 @@
   "users": [
     {
       "id": "Traveller 1",
-      "phone": "+358000000",
+      "phone": "+358501231234",
       "email": "user1@example.com",
       "password": "$2a$10$4CaTwRT2I0o0oV/6pNQQ/eS10JD63MkfiO2w1pGHbZV7o7v.Df3xS"
     },
     {
       "id": "Traveller 2",
-      "phone": "+3581111111",
+      "phone": "+358501112223",
       "email": "user2@example.com",
       "password": "$2a$10$qe5jJlEytequi3dPRbMpb.yI8lSoC/eTsVQPeIe3pKBkXAsdY/0O2"
     }
   ],
   "histories": [
     {
-      "queries": [
-        {
-          "from_place": "Kamppi",
-          "to_place": "Vanha Maantie 6",
-          "modes": {
-            "TRAM": true,
-            "BUS": true,
-            "SUBWAY": true,
-            "RAIL": true
-          },
-          "date": "01-27-2019",
-          "time": "20:00",
-          "arrive_by": false,
-          "error": ""
-        }
-      ],
+      "queries": [],
       "id": "Traveller 1"
     },
     {
-      "id": "Traveller 2",
-      "queries": []
+      "queries": [],
+      "id": "Traveller 2"
     }
   ],
   "tickets": [
     {
-      "1548616851": {
-        "valid_until": 1548616851,
-        "agency": "HSL",
-        "name": "Kertalippu Lähiseutu 1 (PKS)",
-        "uid": "EKNfk6SMpIMn3NrUTwZ4GLkkd2ZJHcBXNdmUAlw333ktmFt61H2AGxAnJ8t2SoY4",
-        "secret": "+358000000"
-      },
       "id": "Traveller 1"
     },
     {

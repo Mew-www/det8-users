@@ -192,6 +192,23 @@ app.post('/buyHSL', (req, res) => {
   }
 });
 
+app.post('/getHSL', (req, res) => {
+  if (req.isAuthenticated()) {
+      axios.get(
+        `https://sales-api.hsl.fi/api/sandbox/render/v1/get?ticketId=${req.body.ticket_id}&deviceId=${req.body.phone_num}`,
+        {headers: {"X-API-Key": HSL_API_KEY, "Accept": "text/html, application/xhtml+xml"}}
+      )
+        .then(response => {
+          res.send(response.data);
+        })
+        .catch(error => {
+          res.send(error.response.data);
+        });
+  } else {
+    res.status(401).send('You must log-in first');
+  }
+});
+
 app.listen(3030, () => {
   console.log('Running in port 3030');
   console.log(HSL_API_KEY);
